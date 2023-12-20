@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -15,7 +17,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +28,110 @@
 
 .App-link {
   color: #61dafb;
+}
+
+/* Add this to your CSS file */
+
+.cid-list {
+  list-style-type: none;
+  padding: 0;
+  font-family: 'Press Start 2P', cursive; /* Pixel-art style font */
+}
+
+.cid-list li {
+  background-color: #f0f0f0;
+  border: 3px solid #333;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 5px;
+  padding: 10px;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cid-list li:hover {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+.card-container {
+  border: 3px solid #000; /* Solid black border */
+  background-color: #f0f0f0; /* Light grey background */
+  padding: 20px;
+  box-shadow: 5px 5px 0px #000; /* Pixel-art style shadow */
+  margin: 20px; /* Add some margin around the card */
+  font-family: 'Press Start 2P', cursive;
+}
+
+
+.logo {
+  height: 50px;
+}
+
+.connect-btn {
+  background-color: #f0f0f0; /* Light grey background */
+  border: 3px solid #333; /* Dark border for pixel effect */
+  color: #333;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive; /* Pixel-art style font */
+  padding: 10px 20px;
+  font-size: 16px; /* Larger font size */
+  transition: all 0.3s ease;
+}
+
+.connect-btn:hover {
+  box-shadow: 5px 5px 0px #333; /* Drop shadow effect */
+  transform: translate(-3px, -3px); /* Slight move to enhance shadow effect */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Aligns button in the center horizontally */
+  align-items: center; /* Aligns button in the center vertically */
+  height: 88vh; /* Full height of the viewport */
+}
+
+.horizontal-container {
+  display: flex;      /* Enables Flexbox */
+  align-items: center; /* Vertically centers the items in the container */
+  justify-content: center; /* Horizontally centers the items in the container */
+  gap: 10px;          /* Optional: Adds space between the elements */
+}
+
+.video-player {
+  border: 4px solid #333; /* Pixel-art style border */
+  display: block;
+  margin: 0 auto; /* Center the video player */
+  max-width: 640px; /* Adjust as needed */
+  box-shadow: 5px 5px #000; /* Optional: Adds a pixel-art style shadow */
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+.body-container {
+  align-content: center;
+  align-items: center; /* Vertically center align */
+  /* justify-content: space-around; Space out children evenly */
+  /* Add any additional styling */
+}
+
+/* Example styles - adjust as needed */
+.video-player-container {
+  flex: 1; /* Flex-grow to take available space */
+  padding: 10px;
+  /* Add any additional styling */
+}
+
+.cid-list-container {
+  flex: 2; /* Flex-grow to take available space */
+  padding: 10px;
+  max-width: 640px;
+  align-items: center;
+  margin: auto;
+  /* Add any additional styling */
 }
 
 @keyframes App-logo-spin {
