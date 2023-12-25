@@ -59,7 +59,7 @@ const Profile = () => {
                   <>
                     <div className='horizontal-container'>
                       {/* <p>Connected to {address}</p> */}
-                      <button className='connect-btn' onClick={() => disconnect()}>Disconnect</button>
+                      <button className='connect-btn' onClick={() => disconnect()}>Rozłącz...</button>
                     </div>
                     <div className='body-container'>
                         <div className="video-player-container">
@@ -72,7 +72,7 @@ const Profile = () => {
                   </>
               ) : (
                 <div className='button-container'>
-                  <button className='connect-btn' onClick={() => connect()}>Connect Wallet</button>
+                  <button className='connect-btn' onClick={() => connect()}>Połącz...</button>
                   </div>
               )}
           </div>

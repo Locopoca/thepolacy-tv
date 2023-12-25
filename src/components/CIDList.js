@@ -10,7 +10,7 @@ const CIDList = ({ onSelectCid }) => {
   };
 
   return (
-    <div className='card-container'>
+    <div className='cid-list-container'>
       <button onClick={toggleFold} className='connect-btn'>
         {isFolded ? 'Show CIDs' : 'Hide CIDs'}
       </button>

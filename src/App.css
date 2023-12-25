@@ -55,12 +55,29 @@
 }
 
 .card-container {
+  background-image: url('./data/logo.png');
+  background-repeat: repeat;
+  background-size: 216px 60px;
+  background-position:center;
+ 
   border: 3px solid #000; /* Solid black border */
   background-color: #f0f0f0; /* Light grey background */
   padding: 20px;
   box-shadow: 5px 5px 0px #000; /* Pixel-art style shadow */
   margin: 20px; /* Add some margin around the card */
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P';
+  height: 92vh;
+}
+
+.cid-list-container {
+  
+ 
+  border: 3px solid #000; /* Solid black border */
+  background-color: #f0f0f0; /* Light grey background */
+  padding: 20px;
+  box-shadow: 5px 5px 0px #000; /* Pixel-art style shadow */
+  margin: 20px; /* Add some margin around the card */
+  font-family: 'Press Start 2P';
 }
 
 
@@ -73,12 +90,12 @@
   border: 3px solid #333; /* Dark border for pixel effect */
   color: #333;
   cursor: pointer;
-  font-family: 'Press Start 2P', cursive; /* Pixel-art style font */
+  font-family: 'Press Start 2P'; /* Pixel-art style font */
   padding: 10px 20px;
-  font-size: 16px; /* Larger font size */
+  font-size: 20px; /* Larger font size */
   transition: all 0.3s ease;
 }
-
+ 
 .connect-btn:hover {
   box-shadow: 5px 5px 0px #333; /* Drop shadow effect */
   transform: translate(-3px, -3px); /* Slight move to enhance shadow effect */
@@ -88,7 +105,8 @@
   display: flex;
   justify-content: center; /* Aligns button in the center horizontally */
   align-items: center; /* Aligns button in the center vertically */
-  height: 88vh; /* Full height of the viewport */
+  height: 92vh;
+  /* height: 92vh; Full height of the viewport */
 }
 
 .horizontal-container {
