@@ -1,4 +1,26 @@
 [
-    "QmUUBSApcb7of34gDEP7KUmbNyLim9vVmL7pL2Y9XAt4Ys",
-    "QmWJAPFdfKFtFrTipmkV8WwygQMyLQsw5gq9pNhzombKF5"
+  {
+    "Title": "Hejnał",
+    "Description": "This is a sample description for material 1.",
+    "CID": "QmUUBSApcb7of34gDEP7KUmbNyLim9vVmL7pL2Y9XAt4Ys",
+    "MediaType": "Video",
+    "Author": "thePolacy",
+    "Original Source": "https://example.com/source1"
+  },
+  {
+    "Title": "Manifest",
+    "Description": "This is a sample description for material 2.",
+    "CID": "QmWJAPFdfKFtFrTipmkV8WwygQMyLQsw5gq9pNhzombKF5",
+    "MediaType": "Video",
+    "Author": "Urbit",
+    "Original Source": "https://example.com/source2"
+  },
+  {
+    "Title": "Spejs_31",
+    "Description": "This is a sample description for material 2.",
+    "CID": "QmYZFSYVBXrUjZeA1o2i6mhsjVJK9UaqEAzsNYKpBpMCxK",
+    "MediaType": "Audio",
+    "Author": "ExHuman & Ozzy",
+    "Original Source": "https://example.com/source2"
+  }
 ]
