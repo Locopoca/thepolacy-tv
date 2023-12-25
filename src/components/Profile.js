@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Web3 from "web3";
+import { Rnd } from "react-rnd";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
 // import VideoPlayer from './VideoPlayer'; // Adjust the path as needed
@@ -18,6 +19,8 @@ const Profile = () => {
   const { address, isConnected } = useAccount();
   const { connect } = useConnect({ connector: new InjectedConnector() });
   const { disconnect } = useDisconnect();
+  const [showMediaPlayer, setShowMediaPlayer] = useState(true);
+  const [showCIDList, setShowCIDList] = useState(true);
   const [currentVideoUrl, setCurrentVideoUrl] = useState(
     "https://ipfs.io/ipfs/QmUUBSApcb7of34gDEP7KUmbNyLim9vVmL7pL2Y9XAt4Ys"
   );
@@ -453,6 +456,29 @@ const Profile = () => {
 
   return (
     <div>
+      {/* Menu for controlling visibility */}
+      {isConnected && (
+      <div className="top-left-menu">
+        <div>
+          <input
+            type="checkbox"
+            id="toggle-media-player"
+            checked={showMediaPlayer}
+            onChange={() => setShowMediaPlayer(!showMediaPlayer)}
+          />
+          <label htmlFor="toggle-media-player">Telewizor</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="toggle-cid-list"
+            checked={showCIDList}
+            onChange={() => setShowCIDList(!showCIDList)}
+          />
+          <label htmlFor="toggle-cid-list">Program</label>
+        </div>
+      </div>
+      )}
       {/* Container for the top right buttons */}
       <div className="buttons-container-top-right">
         {isConnected ? (
@@ -465,15 +491,47 @@ const Profile = () => {
           </button>
         )}
       </div>
-  
+      
       {/* Rest of the content */}
-      {isConnected && (
-        <>
-          <div className="horizontal-container">
-            {hasNFT && <MediaPlayer currentVideoUrl={currentVideoUrl} />}
-            {hasNFT && <CIDList className="cid-list-container" onSelectCid={selectCID} />}
+
+      {isConnected && showMediaPlayer && (
+        <Rnd
+          default={{
+            x: 40,
+            y: 140,
+            width: 640,
+            height: 500,
+          }}
+          className="rnd-container-video"
+        >
+          <div className="window-header">
+            <button
+              className="close-btn"
+              onClick={() => setShowMediaPlayer(false)}
+            >
+              X
+            </button>
           </div>
-        </>
+          <MediaPlayer currentVideoUrl={currentVideoUrl} />
+        </Rnd>
+      )}
+      {isConnected && showCIDList && (
+        <Rnd
+          default={{
+            x: 720,
+            y: 190,
+            width: 420,
+            height: 340,
+          }}
+          className="rnd-container-cid"
+        >
+          <div className="window-header">
+            <button className="close-btn" onClick={() => setShowCIDList(false)}>
+              X
+            </button>
+          </div>
+          <CIDList onSelectCid={selectCID} />
+        </Rnd>
       )}
     </div>
   );

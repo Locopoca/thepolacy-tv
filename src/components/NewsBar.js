@@ -7,10 +7,10 @@ const NewsBar = ({ text }) => {
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(text);
-      setCopySuccess("Copied!");
+      setCopySuccess("Podaj dalej!");
       setTimeout(() => setCopySuccess(""), 2000); // Reset the notification after 2 seconds
     } catch (err) {
-      setCopySuccess("Failed to copy");
+      setCopySuccess("Coś poszło nie tak...");
     }
   };
 

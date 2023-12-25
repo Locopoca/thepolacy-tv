@@ -22,10 +22,10 @@ const CIDList = ({ onSelectCid }) => {
     <div className="cid-list-container">
       <div className="buttons-container">
         <button onClick={toggleFold} className="connect-btn">
-          {isFolded ? "Show Materials" : "Hide Materials"}
+          {isFolded ? "Poka sowe" : "Schowaj w kieszeń"}
         </button>
         <button onClick={() => handleAuthorSelect("")} className="connect-btn">
-          {selectedAuthor || "Select Author"}
+          {selectedAuthor || "Wybierz autora"}
         </button>
       </div>
       {!isFolded && (
