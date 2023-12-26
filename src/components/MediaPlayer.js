@@ -14,7 +14,7 @@ const MediaPlayer = ({ currentVideoUrl }) => {
   return (
     <div className={`media-player ${mediaType}`}>
       <video src={currentVideoUrl} controls onLoadedMetadata={handleMetadataLoaded} style={{ display: mediaType === 'video' ? 'block' : 'none' }} />
-      <audio src={currentVideoUrl} controls autoplay style={{ display: mediaType === 'audio' ? 'block' : 'none' }} />
+      <audio src={currentVideoUrl} controls style={{ display: mediaType === 'audio' ? 'block' : 'none' }} />
     </div>
   );
 };

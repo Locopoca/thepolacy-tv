@@ -263,6 +263,22 @@
   font-family: 'Press Start 2P', cursive;
   min-width: 480px;
   min-height: 340px;
+  z-index: 4;
+}
+
+.rnd-container-chat {
+  background-image: url("./data/logo.png");
+  background-repeat:round;
+  background-size: 216px 40px;
+  background-position: center;
+  border: 3px solid #333; /* Pixel-art style border */
+  background-color: #f0f0f0; /* Light grey background */
+  box-shadow: 5px 5px 0px #000; /* Pixel-art style shadow */
+  overflow: hidden;
+  font-family: 'Press Start 2P', cursive;
+  min-width: 350px;
+  min-height: 400px;
+  z-index: 1;
 }
 
 .window-header {
@@ -333,6 +349,8 @@
   margin: auto; /* Center the video player */ /* Adjust as needed */
   box-shadow: 5px 5px #000; /* Optional: Adds a pixel-art style shadow */
 }
+
+
 
 video {
   width: 100%;

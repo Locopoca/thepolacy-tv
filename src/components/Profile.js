@@ -7,6 +7,7 @@ import { InjectedConnector } from "wagmi/connectors/injected";
 import CIDList from "./CIDList.js";
 import "../App.css";
 import MediaPlayer from "./MediaPlayer.js";
+import ChatComponent from "./ChatComponent.js";
 
 let web3;
 if (window.ethereum) {
@@ -20,7 +21,7 @@ const Profile = () => {
   const { connect } = useConnect({ connector: new InjectedConnector() });
   const { disconnect } = useDisconnect();
   const [showMediaPlayer, setShowMediaPlayer] = useState(true);
-  const [showCIDList, setShowCIDList] = useState(true);
+  const [showCIDList, setShowCIDList] = useState(false);
   const [currentVideoUrl, setCurrentVideoUrl] = useState(
     "https://ipfs.io/ipfs/QmUUBSApcb7of34gDEP7KUmbNyLim9vVmL7pL2Y9XAt4Ys"
   );
@@ -444,15 +445,19 @@ const Profile = () => {
     }
   }, []);
 
+
+
   useEffect(() => {
     if (isConnected && address) {
       getNFTBalance(address);
     }
   }, [isConnected, address, getNFTBalance]);
 
-  useEffect(() => {
-    console.log("Has NFT?", hasNFT);
-  }, [hasNFT]);
+  // useEffect(() => {
+  //   console.log("Address", address);
+  // }, [address]);
+
+  const userAccount = address;
 
   return (
     <div>
@@ -515,13 +520,34 @@ const Profile = () => {
           <MediaPlayer currentVideoUrl={currentVideoUrl} />
         </Rnd>
       )}
+      {isConnected && showMediaPlayer && (
+        <Rnd
+          default={{
+            x: 740,
+            y: 190,
+            width: 350,
+            height: 420,
+          }}
+          className="rnd-container-chat"
+        >
+          <div className="window-header">
+            <button
+              className="close-btn"
+              onClick={() => setShowMediaPlayer(false)}
+            >
+              X
+            </button>
+          </div>
+          <ChatComponent userAccount={userAccount} />
+        </Rnd>
+      )}
       {isConnected && showCIDList && (
         <Rnd
           default={{
-            x: 720,
-            y: 190,
+            x: 800,
+            y: 230,
             width: 420,
-            height: 340,
+            height: 300,
           }}
           className="rnd-container-cid"
         >

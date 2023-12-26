@@ -1,0 +1,91 @@
+/* Chat Container */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px; /* Adjust as needed */
+  margin: 20px;
+  border: 3px solid #333; /* Solid dark border */
+  background-color: #f0f0f0; /* Light grey background */
+  box-shadow: 5px 5px 0px #000; /* Pixel-art style shadow */
+  font-family: "Press Start 2P", cursive; /* Retro pixel font */
+}
+
+/* Chat Messages Display Area */
+.chat-messages {
+  height: 300px; /* Adjust as needed */
+  overflow-y: auto;
+  background-color: #fff;
+  border: 3px solid #333; /* Solid dark border */
+  flex-direction: column-reverse; /* Start from the bottom */
+}
+
+.chat-message {
+  padding: 5px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #f0f0f0;
+  border: 1px solid #333;
+  word-wrap: break-word;
+}
+
+.chat-input {
+  border: 3px solid #333;
+  padding: 5px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.8rem;
+  resize: none; /* Prevent resizing to maintain the chat layout */
+  box-sizing: border-box; /* Ensures padding doesn't increase size */
+  width: calc(100% - 10px); /* Adjust width to fit container */
+  margin: 5px; /* Add margin for spacing */
+}
+
+/* Message Info (Account and Timecode) */
+.message-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.message-time,
+.message-user {
+  color: #333;
+}
+
+/* Message Text */
+.message-text {
+  color: #333;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+}
+
+/* Input Field */
+.chat-input {
+  border: 3px solid #333;
+  padding: 5px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.8rem;
+}
+
+/* Custom Scrollbar */
+.chat-messages::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 0; /* Square borders for a pixelated look */
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Hide Send Button (Enter key will be used) */
+.chat-send-btn {
+  display: none;
+}
