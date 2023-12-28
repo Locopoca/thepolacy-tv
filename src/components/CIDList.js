@@ -3,7 +3,7 @@ import materials from "../data/cids.json";
 import "../App.css";
 
 const CIDList = ({ onSelectCid }) => {
-  const [isFolded, setIsFolded] = useState(true);
+  const [isFolded, setIsFolded] = useState(false);
   const [selectedAuthor, setSelectedAuthor] = useState("");
 
   const toggleFold = () => {

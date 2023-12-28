@@ -22,6 +22,7 @@ const Profile = () => {
   const { disconnect } = useDisconnect();
   const [showMediaPlayer, setShowMediaPlayer] = useState(true);
   const [showCIDList, setShowCIDList] = useState(false);
+  const [showChat, setShowChat] = useState(false);
   const [currentVideoUrl, setCurrentVideoUrl] = useState(
     "https://ipfs.io/ipfs/QmUUBSApcb7of34gDEP7KUmbNyLim9vVmL7pL2Y9XAt4Ys"
   );
@@ -482,6 +483,15 @@ const Profile = () => {
           />
           <label htmlFor="toggle-cid-list">Program</label>
         </div>
+        <div>
+          <input
+            type="checkbox"
+            id="toggle-chat"
+            checked={showChat}
+            onChange={() => setShowChat(!showChat)}
+          />
+          <label htmlFor="toggle-chat">Chat</label>
+        </div>
       </div>
       )}
       {/* Container for the top right buttons */}
@@ -520,20 +530,20 @@ const Profile = () => {
           <MediaPlayer currentVideoUrl={currentVideoUrl} />
         </Rnd>
       )}
-      {isConnected && showMediaPlayer && (
+      {isConnected && showChat && (
         <Rnd
           default={{
-            x: 740,
-            y: 190,
+            x: 750,
+            y: 160,
             width: 350,
-            height: 420,
+            height: 480,
           }}
           className="rnd-container-chat"
         >
           <div className="window-header">
             <button
               className="close-btn"
-              onClick={() => setShowMediaPlayer(false)}
+              onClick={() => setShowChat(false)}
             >
               X
             </button>
@@ -544,9 +554,9 @@ const Profile = () => {
       {isConnected && showCIDList && (
         <Rnd
           default={{
-            x: 800,
+            x: 720,
             y: 230,
-            width: 420,
+            width: 360,
             height: 300,
           }}
           className="rnd-container-cid"

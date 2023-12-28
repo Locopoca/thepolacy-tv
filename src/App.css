@@ -261,8 +261,8 @@
   box-shadow: 5px 5px 0px #000; /* Pixel-art style shadow */
   overflow: hidden;
   font-family: 'Press Start 2P', cursive;
-  min-width: 480px;
-  min-height: 340px;
+  min-width: 440px;
+  min-height: 320px;
   z-index: 4;
 }
 
@@ -277,7 +277,8 @@
   overflow: hidden;
   font-family: 'Press Start 2P', cursive;
   min-width: 350px;
-  min-height: 400px;
+  min-height: 480px;
+  max-width: 500px;
   z-index: 1;
 }
 
