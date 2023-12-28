@@ -509,7 +509,7 @@ const Profile = () => {
       
       {/* Rest of the content */}
 
-      {isConnected && showMediaPlayer && (
+      {isConnected && showMediaPlayer && hasNFT && (
         <Rnd
           default={{
             x: 40,
@@ -530,7 +530,7 @@ const Profile = () => {
           <MediaPlayer currentVideoUrl={currentVideoUrl} />
         </Rnd>
       )}
-      {isConnected && showChat && (
+      {isConnected && showChat && hasNFT && (
         <Rnd
           default={{
             x: 750,
@@ -551,7 +551,7 @@ const Profile = () => {
           <ChatComponent userAccount={userAccount} />
         </Rnd>
       )}
-      {isConnected && showCIDList && (
+      {isConnected && showCIDList && hasNFT && (
         <Rnd
           default={{
             x: 720,
