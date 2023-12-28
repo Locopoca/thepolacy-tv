@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import './ChatComponentPixel.css'; // Ensure you have the CSS file
 
-const socket = io('http://localhost:4000'); // Adjust as per your server setup
+const socket = io('https://aqueous-thicket-89746-c9d5812a2447.herokuapp.com'); // Adjust as per your server setup
 
 const ChatComponent = ({ userAccount }) => {
   const [message, setMessage] = useState('');
