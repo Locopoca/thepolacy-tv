@@ -8,6 +8,7 @@ import CIDList from "./CIDList.js";
 import "../App.css";
 import MediaPlayer from "./MediaPlayer.js";
 import ChatComponent from "./ChatComponent.js";
+import FrameView from "./FrameView.js";
 
 let web3;
 if (window.ethereum) {
@@ -23,6 +24,7 @@ const Profile = () => {
   const [showMediaPlayer, setShowMediaPlayer] = useState(true);
   const [showCIDList, setShowCIDList] = useState(false);
   const [showChat, setShowChat] = useState(false);
+  const [showFrame, setShowFrame] = useState(true);
   const [currentVideoUrl, setCurrentVideoUrl] = useState(
     "https://ipfs.io/ipfs/QmUUBSApcb7of34gDEP7KUmbNyLim9vVmL7pL2Y9XAt4Ys"
   );
@@ -446,8 +448,6 @@ const Profile = () => {
     }
   }, []);
 
-
-
   useEffect(() => {
     if (isConnected && address) {
       getNFTBalance(address);
@@ -459,40 +459,49 @@ const Profile = () => {
   // }, [address]);
 
   const userAccount = address;
-
+  const url = "https://thepolacy.pl";
   return (
     <div>
       {/* Menu for controlling visibility */}
-      {isConnected && (
-      <div className="top-left-menu">
-        <div>
-          <input
-            type="checkbox"
-            id="toggle-media-player"
-            checked={showMediaPlayer}
-            onChange={() => setShowMediaPlayer(!showMediaPlayer)}
-          />
-          <label htmlFor="toggle-media-player">Telewizor</label>
+      {isConnected && hasNFT && (
+        <div className="top-left-menu">
+          <div>
+            <input
+              type="checkbox"
+              id="toggle-media-player"
+              checked={showMediaPlayer}
+              onChange={() => setShowMediaPlayer(!showMediaPlayer)}
+            />
+            <label htmlFor="toggle-media-player">Telewizor</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="toggle-cid-list"
+              checked={showCIDList}
+              onChange={() => setShowCIDList(!showCIDList)}
+            />
+            <label htmlFor="toggle-cid-list">Program</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="toggle-chat"
+              checked={showChat}
+              onChange={() => setShowChat(!showChat)}
+            />
+            <label htmlFor="toggle-chat">Chat</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="toggle-frame"
+              checked={showFrame}
+              onChange={() => setShowFrame(!showFrame)}
+            />
+            <label htmlFor="toggle-frame">thePolacy</label>
+          </div>
         </div>
-        <div>
-          <input
-            type="checkbox"
-            id="toggle-cid-list"
-            checked={showCIDList}
-            onChange={() => setShowCIDList(!showCIDList)}
-          />
-          <label htmlFor="toggle-cid-list">Program</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="toggle-chat"
-            checked={showChat}
-            onChange={() => setShowChat(!showChat)}
-          />
-          <label htmlFor="toggle-chat">Chat</label>
-        </div>
-      </div>
       )}
       {/* Container for the top right buttons */}
       <div className="buttons-container-top-right">
@@ -506,7 +515,7 @@ const Profile = () => {
           </button>
         )}
       </div>
-      
+
       {/* Rest of the content */}
 
       {isConnected && showMediaPlayer && hasNFT && (
@@ -533,7 +542,7 @@ const Profile = () => {
       {isConnected && showChat && hasNFT && (
         <Rnd
           default={{
-            x: 750,
+            x: 260,
             y: 160,
             width: 350,
             height: 480,
@@ -541,10 +550,7 @@ const Profile = () => {
           className="rnd-container-chat"
         >
           <div className="window-header">
-            <button
-              className="close-btn"
-              onClick={() => setShowChat(false)}
-            >
+            <button className="close-btn" onClick={() => setShowChat(false)}>
               X
             </button>
           </div>
@@ -554,7 +560,7 @@ const Profile = () => {
       {isConnected && showCIDList && hasNFT && (
         <Rnd
           default={{
-            x: 720,
+            x: 200,
             y: 230,
             width: 360,
             height: 300,
@@ -567,6 +573,24 @@ const Profile = () => {
             </button>
           </div>
           <CIDList onSelectCid={selectCID} />
+        </Rnd>
+      )}
+      {isConnected && showFrame && hasNFT && (
+        <Rnd
+          default={{
+            x: 250,
+            y: 100,
+            width: 800,
+            height: 600,
+          }}
+          className="rnd-container-frame"
+        >
+          <div className="window-header">
+            <button className="close-btn" onClick={() => setShowFrame(false)}>
+              X
+            </button>
+          </div>
+          <FrameView url={url} />
         </Rnd>
       )}
     </div>

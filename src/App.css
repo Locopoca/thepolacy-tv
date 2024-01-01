@@ -156,7 +156,7 @@
 .news-content {
   white-space: nowrap;
   display: block;
-  animation: scrollRightToLeft 45s linear infinite;
+  animation: scrollRightToLeft 90s linear infinite;
   filter: drop-shadow(1px 1px 0 #333); /* Pixel-art style shadow */
 }
 /* Custom scrollbar track */
@@ -251,6 +251,21 @@
   z-index: 2;
 }
 
+.rnd-container-frame {
+  background-image: url("./data/logo.png");
+  background-repeat:no-repeat;
+  background-size: 384px 60px;
+  background-position: center;
+  border: 3px solid #333; /* Pixel-art style border */
+  background-color: #f0f0f0; /* Light grey background */
+  box-shadow: 5px 5px 0px #000; /* Pixel-art style shadow */
+  overflow: hidden;
+  font-family: 'Press Start 2P', cursive;
+  width: 810px;
+  height: 640px;
+  z-index: 2;
+}
+
 .rnd-container-cid {
   background-image: url("./data/logo.png");
   background-repeat:repeat-y;
@@ -261,8 +276,8 @@
   box-shadow: 5px 5px 0px #000; /* Pixel-art style shadow */
   overflow: hidden;
   font-family: 'Press Start 2P', cursive;
-  min-width: 440px;
-  min-height: 320px;
+  min-width: 460px;
+  min-height: 330px;
   z-index: 4;
 }
 
